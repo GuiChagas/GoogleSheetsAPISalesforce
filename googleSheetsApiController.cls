@@ -126,7 +126,7 @@ public with sharing class googleSheetsApiController {
         req.setMethod('POST');
         req.setEndpoint('callout:GoogleSheetN/v4/spreadsheets/' + fileId + ':batchUpdate');
 
-        //req.setHeader('Authorization', 'Bearer ya29.a0AfB_byC3iJjkWCAZnzqmeLRDxh7PFznDo0YkJDtewGz6zp3HlOWEyUdgbBIyZ0sdMnwrSoNBjHTsNTdkv-rsw1c4jgb4FRCEewGakt-XmeRopPA5XtayHN8DKBbYBAiNSvTtJKZePjttlMibNRux7R2vySpXMQaCgYKAbMSARISFQHsvYlsVgSNPEoZt9RIMItey5Labw0165');
+        //req.setHeader('Authorization', 'Bearer -------');
         req.setHeader('Content-Type', 'application/json');
         req.setHeader('Accept', 'application/json');
         req.setBody(batchUpdateRequestJson);
@@ -162,7 +162,7 @@ public with sharing class googleSheetsApiController {
 
         req.setEndpoint('callout:GoogleSheetN/v4/spreadsheets/' + fileId + '/values:batchUpdate');
 
-        //req.setHeader('Authorization', 'Bearer ya29.a0AfB_byC3iJjkWCAZnzqmeLRDxh7PFznDo0YkJDtewGz6zp3HlOWEyUdgbBIyZ0sdMnwrSoNBjHTsNTdkv-rsw1c4jgb4FRCEewGakt-XmeRopPA5XtayHN8DKBbYBAiNSvTtJKZePjttlMibNRux7R2vySpXMQaCgYKAbMSARISFQHsvYlsVgSNPEoZt9RIMItey5Labw0165');
+        //req.setHeader('Authorization', 'Bearer -------');        
         req.setHeader('Content-Type', 'application/json');
         req.setHeader('Accept', 'application/json');
         req.setBody(batchUpdateRequestJson);
@@ -182,8 +182,8 @@ public with sharing class googleSheetsApiController {
         HttpRequest req = new HttpRequest();
         req.setEndpoint(endpoint);
         req.setMethod('POST');
-        //req.setHeader('Authorization', 'Bearer ya29.a0AfB_byC3iJjkWCAZnzqmeLRDxh7PFznDo0YkJDtewGz6zp3HlOWEyUdgbBIyZ0sdMnwrSoNBjHTsNTdkv-rsw1c4jgb4FRCEewGakt-XmeRopPA5XtayHN8DKBbYBAiNSvTtJKZePjttlMibNRux7R2vySpXMQaCgYKAbMSARISFQHsvYlsVgSNPEoZt9RIMItey5Labw0165');
-        req.setHeader('Content-Length', '0');
+        //req.setHeader('Authorization', 'Bearer -------');        req.setHeader('Content-Length', '0');
+        
         HttpResponse res = new Http().send(req);
         if (res.getStatusCode() == 200) {
             System.debug('Sheet cleared successfully: ' + sheetName);
@@ -218,8 +218,7 @@ public with sharing class googleSheetsApiController {
         HttpRequest req = new HttpRequest();
         req.setEndpoint(endpoint);
         req.setMethod('POST');
-        //req.setHeader('Authorization', 'Bearer ya29.a0AfB_byC3iJjkWCAZnzqmeLRDxh7PFznDo0YkJDtewGz6zp3HlOWEyUdgbBIyZ0sdMnwrSoNBjHTsNTdkv-rsw1c4jgb4FRCEewGakt-XmeRopPA5XtayHN8DKBbYBAiNSvTtJKZePjttlMibNRux7R2vySpXMQaCgYKAbMSARISFQHsvYlsVgSNPEoZt9RIMItey5Labw0165');
-        req.setHeader('Content-Type', 'application/json');
+        //req.setHeader('Authorization', 'Bearer -------');        req.setHeader('Content-Type', 'application/json');
         req.setBody(payload);
 
         HttpResponse res = new Http().send(req);
