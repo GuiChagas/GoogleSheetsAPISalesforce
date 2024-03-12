@@ -1,6 +1,6 @@
 public with sharing class googleSheetsApiController {
-    public googleSheetsApiController() {}
-    private static final String fileId = '1HfGyrQO8tnVfKHdDik_xgFKVzH1x3sGDtlucTDDUkRY';
+    
+    private static final String fileId = '000000000000000000000'; //modify to your fileId
 
     public static List<List<Object>> getAccounts(){
         List<Account> accounts = [SELECT Id, Name, Industry, Type FROM Account]; //query to substitute
@@ -39,7 +39,7 @@ public with sharing class googleSheetsApiController {
                 Map<String, Object> repeatCellRequest = new Map<String, Object>{
                     'repeatCell' => new Map<String, Object>{
                         'range' => new Map<String, Object>{
-                            'sheetId' => 416085245,
+                            'sheetId' => 000001, //modify to your sheetId
                             'startRowIndex' => i,
                             'endRowIndex' => (i + 1)
                         },
@@ -91,7 +91,7 @@ public with sharing class googleSheetsApiController {
         Map<String, Object> repeatCellRequestHeaderSheet2 = new Map<String, Object>{
             'repeatCell' => new Map<String, Object>{
                 'range' => new Map<String, Object>{
-                    'sheetId' => 416085245,
+                    'sheetId' => 000001, //modify to your sheetId
                     'startRowIndex' => 0,
                     'endRowIndex' => 1
                 },
@@ -120,7 +120,7 @@ public with sharing class googleSheetsApiController {
         String batchUpdateRequestJson = JSON.serialize(batchUpdateRequest);
 
         clearSheetStyle(fileId, 0);
-        clearSheetStyle(fileId, 416085245);
+        clearSheetStyle(fileId, 000001); //modify to your sheetId
 
         HttpRequest req = new HttpRequest();
         req.setMethod('POST');
@@ -182,7 +182,8 @@ public with sharing class googleSheetsApiController {
         HttpRequest req = new HttpRequest();
         req.setEndpoint(endpoint);
         req.setMethod('POST');
-        //req.setHeader('Authorization', 'Bearer -------');        req.setHeader('Content-Length', '0');
+        //req.setHeader('Authorization', 'Bearer -------');        
+        req.setHeader('Content-Length', '0');
         
         HttpResponse res = new Http().send(req);
         if (res.getStatusCode() == 200) {
@@ -218,7 +219,8 @@ public with sharing class googleSheetsApiController {
         HttpRequest req = new HttpRequest();
         req.setEndpoint(endpoint);
         req.setMethod('POST');
-        //req.setHeader('Authorization', 'Bearer -------');        req.setHeader('Content-Type', 'application/json');
+        //req.setHeader('Authorization', 'Bearer -------');        
+        req.setHeader('Content-Type', 'application/json');
         req.setBody(payload);
 
         HttpResponse res = new Http().send(req);
